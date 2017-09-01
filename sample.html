@@ -7,6 +7,20 @@
 	<script type="text/javascript" src = 'SKY.js'></script>
 </head>
 <body>
-
+<form id="accountNameInput" method="POST" action="getPasswd">
+	<label for="accountName">Account：</label>
+	<input type="" name="" id="accountName">
+	<input type="submit" value="Submit">
+	<script type="text/javascript">
+		SKY.$('accountNameInput').addEvent('submit',function(e){
+			var name = SKY.$('accountName').nodes[0];
+			if(!name||!name.value){return;}
+			if(name.value.indexOf('fuck')>=0){
+				alert("Don't be rude please!");
+				e.preventDefault();
+			}
+		});
+	</script>
+</form>
 </body>
 </html>
